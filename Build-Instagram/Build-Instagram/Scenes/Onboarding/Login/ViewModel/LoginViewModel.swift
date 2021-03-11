@@ -4,11 +4,15 @@
 //
 //  Created by Mizia Lima on 3/10/21.
 //
-
 import UIKit
+import SafariServices
 
 protocol LoginViewModelProtocol: AnyObject {
     func didTapLoginButton()
+    func didTapTermsOfService()
+    func didTapPrivacyPolitic()
+    func didTapTCreateAccount()
+    var viewController: LoginViewEvents? { get set }
 }
 
 class LoginViewModel: LoginViewModelProtocol {
@@ -33,8 +37,25 @@ class LoginViewModel: LoginViewModelProtocol {
         
         setupTabBarItens(tabBarViewController: tabBarViewController)
         
-        //viewController?.rootViewController(viewController: tabBarViewController)
-        UIViewController.replaceRootViewController(viewController: tabBarViewController)
+        viewController?.root(viewController: tabBarViewController)
+        //UIViewController.replaceRootViewController(viewController: tabBarViewController)
+    }
+    
+    func didTapTermsOfService(){
+        guard let url = URL(string: "https://help.instagram.com/581066165581870") else { return }
+        let termsView = SFSafariViewController(url: url)
+        viewController?.present(viewController: termsView)
+    }
+    
+    func didTapPrivacyPolitic(){
+        guard let url = URL(string: "https://help.instagram.com/519522125107875") else { return }
+        let privacyPoliticView = SFSafariViewController(url: url)
+        viewController?.present(viewController: privacyPoliticView)
+    }
+    
+    func didTapTCreateAccount(){
+        let registerView = RegisterViewController()
+        viewController?.present(viewController: registerView)
     }
     
     private func setupTabBarItens(tabBarViewController: UITabBarController){

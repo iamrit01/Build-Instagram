@@ -6,6 +6,14 @@ target 'Build-Instagram' do
   use_frameworks!
 
   # Pods for Build-Instagram
+  pod 'Appirater'
+
+  # Pods for Firebase
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
 
   target 'Build-InstagramTests' do
     inherit! :search_paths

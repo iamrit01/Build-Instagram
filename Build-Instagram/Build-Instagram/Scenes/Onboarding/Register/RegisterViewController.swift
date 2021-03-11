@@ -1,19 +1,17 @@
 //
-//  ViewController.swift
+//  RegisterViewController.swift
 //  Build-Instagram
 //
-//  Created by Mizia Lima on 3/9/21.
+//  Created by Mizia Lima on 3/10/21.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class RegisterViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
-
-
 }
-
